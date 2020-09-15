@@ -13,4 +13,16 @@ class FoodTruck
     @inventory[item_obj] += quantity
   end
 
+  def potential_revenue
+    quantities = 0
+    total_rev = 0
+    @inventory.each do |key, value|
+      quantities += value
+    end
+    @inventory.each do |key, value|
+      quantities +=  key.price.to_i
+    end
+    quantities
+  end
+  
 end

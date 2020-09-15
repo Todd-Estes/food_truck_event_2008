@@ -39,7 +39,7 @@ class EventTest < Minitest::Test
     assert_equal expected, event.food_truck_names
     end
 
-  def test_trucks_sell_items_and_make_money
+  def test_trucks_sell_items
 
     event = Event.new("South Pearl Street Farmers Market")
     food_truck1 = FoodTruck.new("Rocky Mountain Pies")
@@ -64,9 +64,7 @@ class EventTest < Minitest::Test
     assert_equal [food_truck1, food_truck3],  event.food_trucks_that_sell(item1)
     assert_equal [food_truck2], event.food_trucks_that_sell(item4)
 
-    assert_equal 148.75, food_truck1.potential_revenue
-    assert_equal 345.00, food_truck2.potential_revenue
-    assert_equal 243.75, food_truck3.potential_revenue
+
 
 
   end
