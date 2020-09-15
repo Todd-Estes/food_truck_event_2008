@@ -19,8 +19,11 @@ end
 
 def test_truck_can_add_to_inventory
 
+
   item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
   item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
+
+  food_truck = FoodTruck.new("Rocky Mountain Pies")
 
   assert_equal 0, food_truck.check_stock(item1)
   food_truck.stock(item1, 30)
@@ -37,6 +40,6 @@ def test_truck_can_add_to_inventory
   assert_equal expected2, food_truck.inventory
 
 
-
+end
 
 end
